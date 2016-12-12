@@ -6,14 +6,14 @@ import json
 app = Flask(__name__)
 
 app.config['DEBUG'] = True
+
+'''
+.env file to specify BASE_URL for ouimeaux server as well as
+WEMO_CURL for location of wemo-curl.sh file
+'''
 app.config.from_pyfile('.env')
 
-queues = {
-	"a": "toggle",
-	"b": "on",
-	"c": "off"
-}
-
+queues = {"a": "toggle","b": "on","c": "off"}
 inv_queues = {v: k for k, v in queues.items()}
 
 '''
